@@ -63,8 +63,8 @@ g. 书写高效率的SQL。比如 SELECT * FROM TABEL 改为 SELECT field_1, fie
 	1、如果A表BID是自增长,并且是连续的,B表的ID为索引<br>
 	select * from a,b where a.tid = b.id and a.bid>500000 limit 200;<br>
 
-	2、如果A表的BID不是连续的,那么就需要使用覆盖索引.BID要么是主键,要么是辅助索引,B表ID也需要有索引。<br>
-	select * from b , (select tid from a limit 50000,200) a where b.id = a .tid;<br>
+	2、如果A表的BID不是连续的,那么就需要使用覆盖索引.BID要么是主键,要么是辅助索引,B表ID也需要有索引。
+	select * from b , (select tid from a limit 50000,200) a where b.id = a .tid;
 
 linux
 
